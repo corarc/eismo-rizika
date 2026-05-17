@@ -6,7 +6,7 @@ import {
 } from './analytics';
 
 const WEBSITE_ID = '69faf31a-65a3-40a6-b838-19ab1844c86d';
-const HOSTNAME = 'eismorizika.balionidas.xyz';
+const HOSTNAME = 'eismorizika.dpconquest.eu';
 
 type Consent = 'accepted' | 'rejected';
 
