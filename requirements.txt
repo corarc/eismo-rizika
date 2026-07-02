@@ -1,4 +1,4 @@
-aiohappyeyeballs==2.6.2
+aiohappyeyeballs==2.7.1
 aiohttp==3.14.1
 aiosignal==1.4.0
 attrs==26.1.0
@@ -6,7 +6,7 @@ certifi==2026.6.17
 charset-normalizer==3.4.7
 fonttools==4.63.0
 frozenlist==1.8.0
-geopandas==1.1.3
+geopandas==1.1.4
 osmnx==2.1.0
 idna==3.18
 Jinja2==3.1.6
@@ -16,7 +16,7 @@ packaging==26.2
 pandas==3.0.3
 propcache==0.5.2
 psutil==7.2.2
-pyogrio==0.12.1
+pyogrio==0.13.0
 pyproj==3.7.2
 python-dateutil==2.9.0.post0
 requests==2.34.2
@@ -24,6 +24,6 @@ setuptools==82.0.1
 shapely==2.1.2
 six==1.17.0
 tqdm==4.68.3
-typing_extensions==4.15.0
+typing_extensions==4.16.0
 urllib3==2.7.0
 yarl==1.24.2
