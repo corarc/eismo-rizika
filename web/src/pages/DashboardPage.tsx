@@ -35,6 +35,8 @@ export default function DashboardPage() {
   const municipalities = stats.by_municipality.slice(0, 15);
   const drunkByYear = stats.by_year.filter(d => d.drunk > 5);
   const roadTypes = stats.by_road_type.filter(d => d.name !== 'Nenurodyta');
+  const firstYear = stats.by_year[0].year;
+  const lastYear = stats.by_year[stats.by_year.length - 1].year;
   const peakYear = stats.by_year.reduce((best, row) => row.total > best.total ? row : best, stats.by_year[0]);
   const deadliestYear = stats.by_year.reduce((best, row) => row.deaths > best.deaths ? row : best, stats.by_year[0]);
   const busiestHour = stats.by_hour.reduce((best, row) => row.count > best.count ? row : best, stats.by_hour[0]);
@@ -57,7 +59,7 @@ export default function DashboardPage() {
     <div className="dashboard">
       <div className="dash-hero">
         <div className="dash-header">
-          <h1>Lietuvos kelių eismo įvykių statistika nuo 2013 m. iki 2024 m.</h1>
+          <h1>Lietuvos kelių eismo įvykių statistika nuo {firstYear} m. iki {lastYear} m.</h1>
         </div>
       </div>
 

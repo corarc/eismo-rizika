@@ -59,7 +59,7 @@ def build_map():
     else:
         print("no accidents, empty json")
 
-    with open(WEB_DATA / "accidents.json", "w") as f:
+    with open(WEB_DATA / "accidents.json", "w", encoding="utf-8") as f:
         json.dump({"by_year": acc_by_year, "stats": acc_stats}, f, ensure_ascii=False)
     print("→ accidents.json")
 

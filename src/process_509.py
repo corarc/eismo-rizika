@@ -1,10 +1,10 @@
 import json
 import re
-from pathlib import Path
 from collections import Counter, defaultdict
 
-RAW_509 = Path(__file__).parent.parent / "data" / "raw" / "509"
-WEB_DATA = Path(__file__).parent.parent / "web" / "public" / "data"
+from utils import PROJECT_ROOT, RAW_509, MIN_YEAR, max_year
+
+WEB_DATA = PROJECT_ROOT / "web" / "public" / "data"
 
 
 def _normalize_municipality(name: str) -> str:
@@ -41,6 +41,7 @@ def process():
     by_age_group = Counter()
 
     seen = set()
+    last_year = max_year()
 
     for path in sorted(RAW_509.glob("ei_*.json")):
         data = json.loads(path.read_text(encoding="utf-8"))
@@ -56,7 +57,7 @@ def process():
             dt = r.get("dataLaikas") or ""
             yr_str = dt[:4] if len(dt) >= 4 and dt[:4].isdigit() else path.stem.split("_")[1]
             yr = int(yr_str)
-            if yr < 2013 or yr > 2024:
+            if yr < MIN_YEAR or yr > last_year:
                 continue
 
             by_year[yr]["total"] += 1

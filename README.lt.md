@@ -2,7 +2,7 @@
 
 Jei nori pasižiūrėti gyvai, projektas yra čia: [eismorizika.balionidas.xyz](https://eismorizika.balionidas.xyz/)
 
-Šitas projektas rodo Lietuvos eismo įvykius nuo 2013 iki 2024 metų žemėlapyje ir statistikoje. Duomenys paimti iš [data.gov.lt](https://data.gov.lt/datasets/509/?resource_version=1290).
+Šitas projektas rodo Lietuvos eismo įvykius nuo 2013 iki 2025 metų žemėlapyje ir statistikoje. Duomenys paimti iš [data.gov.lt](https://data.gov.lt/datasets/509/?resource_version=1290).
 
 Žemėlapyje matosi atskiri eismo įvykių taškai, suskirstyti pagal metus, ir dar yra heatmap sluoksnis. Statistikos dalyje galima pasižiūrėti pagal įvykio tipą, orus, paros laiką, savivaldybę, dalyvių grupę ir panašiai.
 
@@ -19,7 +19,7 @@ data/raw/509/
   ei_2013.json
   ei_2014.json
   ...
-  ei_2024.json
+  ei_2025.json
 ```
 
 ### 2. Susitvarkyk Python aplinką

@@ -2,7 +2,7 @@
 
 <p>Lietuviška readme versija: <a href="./README.lt.md">spausk čia</a></p>
 
-Interactive map and statistics dashboard for Lithuanian road accidents from 2013 to 2024, built on open data from [data.gov.lt](https://data.gov.lt/datasets/509/?resource_version=1290).
+Interactive map and statistics dashboard for Lithuanian road accidents from 2013 to 2025, built on open data from [data.gov.lt](https://data.gov.lt/datasets/509/?resource_version=1290).
 
 The map shows individual accident points clustered by year with a heatmap overlay. The dashboard breaks down accidents by type, weather, time of day, municipality, participant category, and more.
 
@@ -19,7 +19,7 @@ data/raw/509/
   ei_2013.json
   ei_2014.json
   ...
-  ei_2024.json
+  ei_2025.json
 ```
 
 ### 2. Set up Python

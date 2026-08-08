@@ -6,9 +6,8 @@ import tempfile
 import zipfile
 import requests
 from shapely.geometry import Point, box
-from utils import PROJECT_ROOT
+from utils import PROJECT_ROOT, RAW_509, MIN_YEAR, max_year
 
-RAW_509 = PROJECT_ROOT / "data" / "raw" / "509"
 PROCESSED = PROJECT_ROOT / "data" / "processed"
 OUT = PROCESSED / "accidents_lithuania.gpkg"
 
@@ -48,6 +47,7 @@ def fetch():
 
     seen = set()
     rows = []
+    last_year = max_year()
 
     for path in sorted(RAW_509.glob("ei_*.json")):
         data = json.loads(path.read_text(encoding="utf-8"))
@@ -66,7 +66,7 @@ def fetch():
 
             dt = r.get("dataLaikas") or ""
             yr_str = dt[:4] if len(dt) >= 4 and dt[:4].isdigit() else path.stem.split("_")[1]  # some records have no timestamp; fall back to filename year
-            if not (2013 <= int(yr_str) <= 2024):
+            if not (MIN_YEAR <= int(yr_str) <= last_year):
                 continue
 
             killed = int(r.get("zuvusiuSkaicius") or 0)
